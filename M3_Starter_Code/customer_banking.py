@@ -1,6 +1,9 @@
 # Import the create_cd_account and create_savings_account functions
 try:
-    from Account import cd_account, savings_account
+    try:
+        from Account import create_cd_account, create_savings_account
+    except ImportError:
+        from Account import create_cd_account, create_savings_account
 except ImportError:
     print("The module 'account' could not be found. Please ensure it is in the correct directory.")
     exit(1)
